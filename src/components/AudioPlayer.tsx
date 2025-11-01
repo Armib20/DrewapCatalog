@@ -2,14 +2,18 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, Volume2, VolumeX, SkipBack, SkipForward } from 'lucide-react';
 import type { Song } from '@/app/page';
 
 interface AudioPlayerProps {
   song: Song;
+  onPrevious?: () => void;
+  onNext?: () => void;
+  hasPrevious?: boolean;
+  hasNext?: boolean;
 }
 
-export default function AudioPlayer({ song }: AudioPlayerProps) {
+export default function AudioPlayer({ song, onPrevious, onNext, hasPrevious, hasNext }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -90,6 +94,25 @@ export default function AudioPlayer({ song }: AudioPlayerProps) {
     }
   };
 
+  const handleSkipPrevious = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    // If within first 5 seconds, go to previous song, otherwise restart current song
+    if (currentTime <= 5 && onPrevious) {
+      onPrevious();
+    } else {
+      audio.currentTime = 0;
+      setCurrentTime(0);
+    }
+  };
+
+  const handleSkipNext = () => {
+    if (onNext) {
+      onNext();
+    }
+  };
+
   const formatTime = (time: number) => {
     if (isNaN(time)) return '0:00';
     const minutes = Math.floor(time / 60);
@@ -116,7 +139,18 @@ export default function AudioPlayer({ song }: AudioPlayerProps) {
         {/* Mobile Layout */}
         <div className="flex flex-col gap-4">
           {/* Play Button & Song Info */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Skip Previous Button */}
+            <motion.button
+              onClick={handleSkipPrevious}
+              disabled={!isLoaded || (!hasPrevious && currentTime <= 5)}
+              whileTap={{ scale: 0.95 }}
+              className="flex-shrink-0 w-10 h-10 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 active:bg-yellow-400/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed touch-manipulation"
+            >
+              <SkipBack className="w-5 h-5 sm:w-5 sm:h-5 text-white" strokeWidth={2.5} />
+            </motion.button>
+
+            {/* Play/Pause Button */}
             <motion.button
               onClick={togglePlay}
               disabled={!isLoaded}
@@ -128,6 +162,16 @@ export default function AudioPlayer({ song }: AudioPlayerProps) {
               ) : (
                 <Play className="w-7 h-7 sm:w-6 sm:h-6 text-black ml-0.5" fill="black" strokeWidth={0} />
               )}
+            </motion.button>
+
+            {/* Skip Next Button */}
+            <motion.button
+              onClick={handleSkipNext}
+              disabled={!isLoaded || !hasNext}
+              whileTap={{ scale: 0.95 }}
+              className="flex-shrink-0 w-10 h-10 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 active:bg-yellow-400/20 flex items-center justify-center transition-colors disabled:opacity-30 disabled:cursor-not-allowed touch-manipulation"
+            >
+              <SkipForward className="w-5 h-5 sm:w-5 sm:h-5 text-white" strokeWidth={2.5} />
             </motion.button>
 
             <div className="flex-1 min-w-0">

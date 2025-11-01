@@ -56,6 +56,22 @@ export default function Home() {
     setMounted(true);
   }, []);
 
+  const currentIndex = currentSong ? songs.findIndex(s => s.id === currentSong.id) : -1;
+  const hasPrevious = currentIndex > 0;
+  const hasNext = currentIndex < songs.length - 1;
+
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentSong(songs[currentIndex - 1]);
+    }
+  };
+
+  const handleNext = () => {
+    if (currentIndex < songs.length - 1) {
+      setCurrentSong(songs[currentIndex + 1]);
+    }
+  };
+
   if (!mounted) return null;
 
   return (
@@ -226,7 +242,15 @@ export default function Home() {
       </div>
 
       {/* Audio Player */}
-      {currentSong && <AudioPlayer song={currentSong} />}
+      {currentSong && (
+        <AudioPlayer 
+          song={currentSong} 
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+          hasPrevious={hasPrevious}
+          hasNext={hasNext}
+        />
+      )}
     </main>
   );
 }

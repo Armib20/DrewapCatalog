@@ -70,10 +70,10 @@ export default function Home() {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <Music className="w-12 h-12 sm:w-16 sm:h-16 text-yellow-400 mx-auto mb-4 sm:mb-6" strokeWidth={2.5} />
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black mb-4 sm:mb-6 text-yellow-400 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 sm:mb-6 text-yellow-400 tracking-wide font-[family-name:var(--font-cormorant)]">
             DREWAP
           </h1>
-          <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto px-2 font-light font-[family-name:var(--font-montserrat)] tracking-wide">
             Japan exclusive for fakemink, wegonebeok, sixbill, DJ Banned, Emwell, 1300saint, and others
           </p>
         </motion.div>

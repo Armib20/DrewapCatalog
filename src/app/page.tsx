@@ -150,7 +150,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative w-full h-64 sm:h-80 lg:h-[500px]"
+              className="relative w-full aspect-square"
             >
               <Image
                 src="/images/drewmink.jpeg"
@@ -167,7 +167,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] mt-6 lg:mt-8"
+              className="relative w-full aspect-square mt-6 lg:mt-8"
             >
               <Image
                 src="/images/drewnyc.png"
@@ -183,7 +183,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] mt-6 lg:mt-8"
+              className="relative w-full aspect-square mt-6 lg:mt-8"
             >
               <Image
                 src="/images/drewok.jpeg"

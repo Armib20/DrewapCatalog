@@ -29,12 +29,6 @@ const songs: Song[] = [
     file: "/songs/cameras final.wav",
   },
   {
-    id: 3,
-    title: "Just Be Real With It",
-    artist: "Drewap",
-    file: "/songs/Just Be Real With It FINAL.wav",
-  },
-  {
     id: 4,
     title: "oouuuu",
     artist: "Drewap",
@@ -45,6 +39,12 @@ const songs: Song[] = [
     title: "Real Speal",
     artist: "Drewap",
     file: "/songs/Real Speal.wav",
+  },
+  {
+    id: 3,
+    title: "Just Be Real With It",
+    artist: "Drewap",
+    file: "/songs/Just Be Real With It FINAL.wav",
   },
 ];
 

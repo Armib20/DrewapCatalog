@@ -24,9 +24,9 @@ const songs: Song[] = [
   },
   {
     id: 2,
-    title: "Track 2",
+    title: "Cameras",
     artist: "Drewap",
-    file: "/songs/track2.mp3",
+    file: "/songs/cameras final.wav",
   },
   {
     id: 3,

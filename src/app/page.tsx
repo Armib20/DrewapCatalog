@@ -81,35 +81,20 @@ export default function Home() {
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           
-          {/* Left Column - Top Image */}
+          {/* Left Column - Image */}
           <div className="lg:col-span-4 order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 mb-6"
+              className="relative w-full h-64 sm:h-80 lg:h-[500px]"
             >
               <Image
-                src="/images/drewnyc.png"
-                alt="Drew NYC"
+                src="/images/drewmink.jpeg"
+                alt="Drew Mink"
                 fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
+                className="object-cover border-2 border-yellow-400/30 bg-black"
                 priority
-              />
-            </motion.div>
-
-            {/* Second image below on desktop, hidden on mobile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 hidden lg:block"
-            >
-              <Image
-                src="/images/drew.png"
-                alt="Drew"
-                fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
               />
             </motion.div>
           </div>
@@ -159,94 +144,36 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Column - Side Images */}
+          {/* Right Column - Image */}
           <div className="lg:col-span-4 order-3">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 mb-6"
+              className="relative w-full h-64 sm:h-80 lg:h-[500px]"
             >
               <Image
-                src="/images/drewport.png"
-                alt="Drew Port"
+                src="/images/drewnyc.png"
+                alt="Drew NYC"
                 fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
-              />
-            </motion.div>
-
-            {/* Third image below on desktop, hidden on mobile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full h-64 sm:h-80 lg:h-96 hidden lg:block"
-            >
-              <Image
-                src="/images/drewmink1.png"
-                alt="Drew Mink 1"
-                fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
+                className="object-cover border-2 border-yellow-400/30 bg-black"
               />
             </motion.div>
           </div>
 
-          {/* Mobile-only bottom images */}
-          <div className="lg:hidden col-span-1 order-4 space-y-6">
+          {/* Bottom Full-Width Image */}
+          <div className="lg:col-span-12 order-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative w-full h-64 sm:h-80"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] mt-6 lg:mt-8"
             >
               <Image
-                src="/images/drew.png"
-                alt="Drew"
+                src="/images/drewok.jpeg"
+                alt="Drew OK"
                 fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative w-full h-64 sm:h-80"
-            >
-              <Image
-                src="/images/drewmink1.png"
-                alt="Drew Mink 1"
-                fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="relative w-full h-64 sm:h-80"
-            >
-              <Image
-                src="/images/drewmink2.png"
-                alt="Drew Mink 2"
-                fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
-              />
-            </motion.div>
-          </div>
-
-          {/* Desktop-only bottom image (drewmink2) */}
-          <div className="hidden lg:block lg:col-span-12 order-5">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative w-full h-80 xl:h-96 mt-8"
-            >
-              <Image
-                src="/images/drewmink2.png"
-                alt="Drew Mink 2"
-                fill
-                className="object-contain border-2 border-yellow-400/30 bg-black"
+                className="object-cover border-2 border-yellow-400/30 bg-black"
               />
             </motion.div>
           </div>

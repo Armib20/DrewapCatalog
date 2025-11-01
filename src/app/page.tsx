@@ -90,8 +90,8 @@ export default function Home() {
               className="relative w-full h-64 sm:h-80 lg:h-[500px]"
             >
               <Image
-                src="/images/drewmink.jpeg"
-                alt="Drew Mink"
+                src="/images/concert.png"
+                alt="Concert"
                 fill
                 className="object-cover border-2 border-yellow-400/30 bg-black"
                 priority
@@ -153,6 +153,23 @@ export default function Home() {
               className="relative w-full h-64 sm:h-80 lg:h-[500px]"
             >
               <Image
+                src="/images/drewmink.jpeg"
+                alt="Drew Mink"
+                fill
+                className="object-cover border-2 border-yellow-400/30 bg-black"
+              />
+            </motion.div>
+          </div>
+
+          {/* Bottom Images */}
+          <div className="lg:col-span-6 order-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] mt-6 lg:mt-8"
+            >
+              <Image
                 src="/images/drewnyc.png"
                 alt="Drew NYC"
                 fill
@@ -161,12 +178,11 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Bottom Full-Width Image */}
-          <div className="lg:col-span-12 order-4">
+          <div className="lg:col-span-6 order-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="relative w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] mt-6 lg:mt-8"
             >
               <Image

@@ -40,12 +40,6 @@ const songs: Song[] = [
     artist: "Drewap",
     file: "/songs/Real Speal.wav",
   },
-  {
-    id: 3,
-    title: "Just Be Real With It",
-    artist: "Drewap",
-    file: "/songs/Just Be Real With It FINAL.wav",
-  },
 ];
 
 export default function Home() {
